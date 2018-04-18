@@ -1,4 +1,4 @@
-package com.dtian.test.design_pattern.observer;
+package com.dtian.java.design_pattern.observer;
 
 public class TestObserver {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package com.dtian.test.design_pattern.observer;
+package com.dtian.java.design_pattern.observer;
 
 /**
  * 具体观察者

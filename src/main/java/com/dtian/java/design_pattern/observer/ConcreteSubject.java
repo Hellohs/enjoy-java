@@ -1,4 +1,4 @@
-package com.dtian.test.design_pattern.observer;
+package com.dtian.java.design_pattern.observer;
 
 import java.util.Vector;
 
@@ -25,8 +25,8 @@ public class ConcreteSubject implements Subject {
 
     @Override
     public void notifyObserver() {
-        for (int i = 0; i < observers.size(); i++) {
-            observers.get(i).update(this.msg);
+        for (Observer observer : observers) {
+            observer.update(this.msg);
         }
     }
 
