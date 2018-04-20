@@ -1,4 +1,4 @@
-package com.dtian.java.design_pattern.observer;
+package com.dtian.java.design_pattern.structure.observer;
 
 import java.util.Vector;
 
