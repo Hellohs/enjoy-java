@@ -1,4 +1,4 @@
-package com.dtian.java.design_pattern.structure.observer;
+package com.dtian.java.design_pattern.behavior.observer;
 
 /**
  * 抽象主题
