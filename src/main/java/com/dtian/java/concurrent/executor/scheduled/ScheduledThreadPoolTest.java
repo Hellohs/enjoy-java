@@ -68,7 +68,7 @@ public class ScheduledThreadPoolTest {
          * 因为任务需要执行5秒，
          * 所以：一次任务执行完之后，等待1秒，开始执行下一个任务
          */
-        scheduledThreadPool.scheduleWithFixedDelay(new ScheduledThreadPoolTestRunnable(), 0L, 1L, TimeUnit.SECONDS);
+        scheduledThreadPool.scheduleWithFixedDelay(new ScheduledThreadPoolTestRunnable(), 0L, 0L, TimeUnit.SECONDS);
     }
 
     static class ScheduledThreadPoolTestRunnable implements Runnable {
