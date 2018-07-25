@@ -54,13 +54,21 @@ public class ScheduledThreadPoolTest {
          * 一次任务执行完之后，需要等待2秒 才开始执行下一次任务(也可以理解每次间隔7秒执行) */
         //scheduledThreadPool.scheduleAtFixedRate(new ScheduledThreadPoolTestRunnable(), 0L, 10L, TimeUnit.SECONDS);
 
-        //test3
+        //test3-1
         /**
          * 0延迟执行，每次周期性延迟5秒，执行下一个任务
          * 因为任务需要执行5秒，
          * 所以：一次任务执行完之后，等待5秒，开始执行下一个任务
          */
-        scheduledThreadPool.scheduleWithFixedDelay(new ScheduledThreadPoolTestRunnable(), 1L, 5L, TimeUnit.SECONDS);
+        //scheduledThreadPool.scheduleWithFixedDelay(new ScheduledThreadPoolTestRunnable(), 0L, 5L, TimeUnit.SECONDS);
+
+        //test3-2
+        /**
+         * 0延迟执行，每次周期性延迟1秒，执行下一个任务
+         * 因为任务需要执行5秒，
+         * 所以：一次任务执行完之后，等待1秒，开始执行下一个任务
+         */
+        scheduledThreadPool.scheduleWithFixedDelay(new ScheduledThreadPoolTestRunnable(), 0L, 1L, TimeUnit.SECONDS);
     }
 
     static class ScheduledThreadPoolTestRunnable implements Runnable {
