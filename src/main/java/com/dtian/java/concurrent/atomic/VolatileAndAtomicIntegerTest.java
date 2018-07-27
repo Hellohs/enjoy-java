@@ -9,7 +9,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * 测试AtomicInteger的原子性
  * 测试synchronized的线程安全
  */
-public class TestVolatileAndAtomicInteger {
+public class VolatileAndAtomicIntegerTest {
     private static int ORDINARY_INT = 0;
     private static volatile int VOLATILE_INT = 0;
     private static AtomicInteger ATOMIC_INT = new AtomicInteger(0);
