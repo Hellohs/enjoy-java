@@ -12,7 +12,7 @@
     <bean id="myInstantiationAwareBeanPostProcessorAdapter" class="com.dtian.java.spring.bean_lifecycle.MyInstantiationAwareBeanPostProcessorAdapter" />
 
     <bean id="student" class="com.dtian.java.spring.bean_lifecycle.Student" init-method="initMethod" destroy-method="desMethod">
-        <property name="name" value="xiaoLi" />
+        <property name="name" value="xiaoLin" />
         <property name="age" value="22" />
     </bean>
 </beans>
