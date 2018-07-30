@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--配置BeanFactory的后置处理器-->
+    <bean id="myBeanFactoryPostProcessor" class="com.dtian.java.spring.bean_lifecycle.MyBeanFactoryPostProcessor" />
+
+    <!--配置Bean的后置处理器-->
+    <bean id="myBeanPostProcessor" class="com.dtian.java.spring.bean_lifecycle.MyBeanPostProcessor" />
+
+    <bean id="myInstantiationAwareBeanPostProcessorAdapter" class="com.dtian.java.spring.bean_lifecycle.MyInstantiationAwareBeanPostProcessorAdapter" />
+
+    <bean id="student" class="com.dtian.java.spring.bean_lifecycle.Student" init-method="initMethod" destroy-method="desMethod">
+        <property name="name" value="xiaoLi" />
+        <property name="age" value="22" />
+    </bean>
+</beans>
