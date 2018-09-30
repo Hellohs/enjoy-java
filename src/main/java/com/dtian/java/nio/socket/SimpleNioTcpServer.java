@@ -1,4 +1,4 @@
-package com.dtian.java.nio.socket.single_thread;
+package com.dtian.java.nio.socket;
 
 import org.apache.commons.lang3.StringUtils;
 
