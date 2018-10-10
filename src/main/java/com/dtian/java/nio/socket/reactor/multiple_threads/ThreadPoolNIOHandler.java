@@ -60,7 +60,7 @@ public class ThreadPoolNIOHandler implements Runnable {
                 e.printStackTrace();
             }
         }
-        if (status == SENDING && key.isValid() && key.isReadable()) {
+        if (status == SENDING && key.isValid() && key.isWritable()) {
             //输出
             try {
                 if(message != null){
