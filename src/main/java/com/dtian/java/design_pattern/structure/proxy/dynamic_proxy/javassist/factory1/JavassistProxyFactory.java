@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
  * 与 ASM 动态生成代码相比,javassist更加简单，而ASM对开发人员的要求较高
  * 就性能上而言，
  *   在生成代码时，jdk创建代理 快于 cglib和javassist
- *   在调用时，cglib和javassist性能优于jdk 创建动态代理的方式
+ *   在调用时，cglib和javassist性能优于 jdk 创建动态代理的方式
  */
 public class JavassistProxyFactory {
 
