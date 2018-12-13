@@ -1,4 +1,4 @@
-package com.dtian.java.concurrent.test_thread;
+package com.dtian.java.core_java.thread.join;
 
 /**
  * 线程join测试
