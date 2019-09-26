@@ -41,7 +41,7 @@ public class NIOMainReactor implements Runnable {
     public void run() {
         while (!Thread.interrupted()){
             try {
-                selector.select(1);
+                selector.select(1);//轮询选择
                 Set<SelectionKey> selected;
                 synchronized (this){
                     selected = selector.selectedKeys();
@@ -50,10 +50,10 @@ public class NIOMainReactor implements Runnable {
                 while (ite.hasNext()){
                     SelectionKey key = ite.next();
                     /**只处理Acceptable的key*/
-                    if(key.isValid() && key.isAcceptable()){
+                    if(key.isValid() && key.isAcceptable()){//被选中
                         NIOAcceptor acceptor = (NIOAcceptor) key.attachment();
                         if(acceptor != null)
-                            acceptor.run();
+                            acceptor.run();// NIOAcceptor run
                     }
                     ite.remove();
                 }
