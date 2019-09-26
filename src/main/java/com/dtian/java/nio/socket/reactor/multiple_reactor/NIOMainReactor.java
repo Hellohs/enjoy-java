@@ -25,13 +25,14 @@ public class NIOMainReactor implements Runnable {
     public NIOMainReactor(int port) throws IOException {
 
         this.subReactorPool = new NIOSubReactorPool("subreactor-pool", 4);
-
+        /**创建（打开）一个多路复用器*/
         this.selector = Selector.open();
-
+        /** 打开通道 */
         this.serverSocketChannel = ServerSocketChannel.open();
         this.serverSocketChannel.socket().bind(new InetSocketAddress("127.0.0.1", port));
+        /** 配置通道非阻塞 */
         this.serverSocketChannel.configureBlocking(false);
-
+        /** 注册ACCEPT事件 */
         SelectionKey key = this.serverSocketChannel.register(selector, SelectionKey.OP_ACCEPT);
         key.attach(new NIOAcceptor());
     }
