@@ -26,10 +26,13 @@ public class NIOSubReactor implements Runnable {
 
     public void register(SocketChannel socketChannel){
         try {
+            /**设置通道非阻塞*/
             socketChannel.configureBlocking(false);
             synchronized (this){
-                selector.wakeup();
+                selector.wakeup();//
+                /**注册OP_READ事件*/
                 SelectionKey key = socketChannel.register(selector, SelectionKey.OP_READ);
+                /** 添加 NIOMultipleReactorHandler 至 上面的key中*/
                 key.attach(new NIOMultipleReactorHandler(this.selector, socketChannel));
             }
         } catch (IOException e) {
@@ -51,7 +54,7 @@ public class NIOSubReactor implements Runnable {
                 while (ite.hasNext()){
                     SelectionKey key = ite.next();
                     /**获取NIOMultipleReactorHandler*/
-                    dispatch((Runnable) key.attachment());
+                    dispatch((Runnable) key.attachment());//dispatch（运行）NIOMultipleReactorHandler的run
                     ite.remove();
                 }
             }

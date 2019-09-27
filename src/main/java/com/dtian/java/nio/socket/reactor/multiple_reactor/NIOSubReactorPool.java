@@ -1,7 +1,7 @@
 package com.dtian.java.nio.socket.reactor.multiple_reactor;
 
 public class NIOSubReactorPool {
-    private NIOSubReactor[] subReactors;
+    private NIOSubReactor[] subReactors;//NIOSubReactor数组
     private volatile int nextReactor;
 
     /**
@@ -14,7 +14,8 @@ public class NIOSubReactorPool {
         for(int i=0; i< poolSize; i++){
             NIOSubReactor subReactor = new NIOSubReactor(name + "-" + i);
             subReactors[i] = subReactor;
-            subReactor.startup();
+            /**在NIOSubReactorPool 创建的时候，subReactor就已经启动了*/
+            subReactor.startup();//启动subReactor
         }
     }
 

@@ -17,7 +17,7 @@ import java.util.Set;
  *
  * @author Dingxc
  */
-public class NIOMainReactor implements Runnable {
+    public class NIOMainReactor implements Runnable {
     final Selector selector;
     final ServerSocketChannel serverSocketChannel;
     final NIOSubReactorPool subReactorPool;
